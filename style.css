@@ -49,6 +49,14 @@ body #access,
     box-shadow: none;
 }
 
+#access {
+    font-size: .8rem;
+}
+
+#access ul a {
+    color: #999999;
+}
+
 /* content */
 
 article.page,
