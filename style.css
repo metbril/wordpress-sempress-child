@@ -11,8 +11,20 @@ License URI:  https://opensource.org/licenses/MIT
 Version: 0.1.0
 */
 
+html {
+    font-size: 20px;
+}
+
 body {
     font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     /* replace background-image through customizer */
     /* set colors with customizer */
+}
+
+h1, h2, h3, h4, h5 {
+    font-weight: 600;
+}
+
+#site-title {
+    font-size: 3rem;
 }
