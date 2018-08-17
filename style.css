@@ -28,3 +28,13 @@ h1, h2, h3, h4, h5 {
 #site-title {
     font-size: 3rem;
 }
+
+/* branding */
+
+#branding .logo {
+    margin-left: -120px;
+  }
+  
+#branding .logo img {
+    border-radius: 50%;
+}
