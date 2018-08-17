@@ -38,3 +38,31 @@ h1, h2, h3, h4, h5 {
 #branding .logo img {
     border-radius: 50%;
 }
+
+/* site navigation */
+
+body #access,
+#access {
+    border-bottom: none;
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+/* content */
+
+article.page,
+article.post,
+article.attachment {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+
+    -moz-border-radius: none;
+    -webkit-border-radius: none;
+    -o-border-radius: none;
+    -ms-border-radius: none;
+    -khtml-border-radius: none;
+    border-radius: none;
+    border: none;
+  }
