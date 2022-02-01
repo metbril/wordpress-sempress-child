@@ -11,14 +11,11 @@ License URI:  https://opensource.org/licenses/MIT
 Version: 0.1.0
 */
 
-html {
-    font-size: 20px;
-}
-
 body {
+	background-image: none;
     font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
-    /* replace background-image through customizer */
-    /* set colors with customizer */
+	font-weight: inherit;
+	text-shadow: none;
 }
 
 h1, h2, h3, h4, h5 {
@@ -34,7 +31,7 @@ h1, h2, h3, h4, h5 {
 #branding .logo {
     margin-left: -120px;
   }
-  
+
 #branding .logo img {
     border-radius: 50%;
 }
@@ -65,7 +62,6 @@ article.attachment {
     -webkit-box-shadow: none;
     -moz-box-shadow: none;
     box-shadow: none;
-
     -moz-border-radius: none;
     -webkit-border-radius: none;
     -o-border-radius: none;
@@ -73,4 +69,10 @@ article.attachment {
     -khtml-border-radius: none;
     border-radius: none;
     border: none;
-  }
+}
+
+.entry-content,
+.entry-summary,
+.entry-title {
+	color: #000000;
+}
