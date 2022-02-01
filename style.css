@@ -16,7 +16,7 @@ html {
 }
 
 body {
-    font-family: 'Source Sans Pro', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, "Avenir Next", Avenir, "Nimbus Sans L", Roboto, Noto, "Segoe UI", Arial, Helvetica, "Helvetica Neue", sans-serif;
     /* replace background-image through customizer */
     /* set colors with customizer */
 }
