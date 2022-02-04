@@ -11,3 +11,24 @@ function my_theme_enqueue_styles() {
     );
 }
 add_action( 'wp_enqueue_scripts', 'my_theme_enqueue_styles' );
+/**
+ * Adds the custom CSS to the theme-header
+ * 
+ * Customized to remove shadows from fonts and borders
+ *
+ * @since 1.3.0
+ */
+function sempress_customize_css() {
+    global $themecolors;
+?>
+    <style type="text/css" id="sempress-custom-colors">
+        body, a { color: <?php echo esc_attr( get_theme_mod( 'sempress_textcolor', '#' . $themecolors['text'] ) ); ?>; }
+        .widget, #access {
+            border-bottom: 1px solid <?php echo esc_attr( get_theme_mod( 'sempress_bordercolor', 'inherit' ) ); ?>;
+        }
+        article.comment {
+            border-top: 1px solid <?php echo esc_attr( get_theme_mod( 'sempress_shadowcolor', 'inherit' ) ); ?>;
+        }
+    </style>
+<?php
+}
