@@ -32,3 +32,19 @@ function sempress_customize_css() {
     </style>
 <?php
 }
+
+/**
+ * Show credits in page footer
+ */
+
+function sempress_child_credits() {
+    ?>
+        Content covered by a
+        <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-Share Alike 4.0 International-license</a>
+        and any code by an
+        <a href="https://mit-license.org">MIT license</a>.
+        <br />
+    <?php
+    }
+    add_action('sempress_credits', 'sempress_child_credits');
+    
