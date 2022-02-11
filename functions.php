@@ -47,3 +47,20 @@ function sempress_child_credits() {
 <?php
 }
 add_action('sempress_credits', 'sempress_child_credits');
+
+/**
+ *  Modify post titles in the edit.php screen.
+ *  If the post title is empty, then show max 10 words from the post content instead.
+ *  https://wordpress.stackexchange.com/questions/189671/show-excerpt-if-no-title-in-admin-view
+ */
+function sempress_child_title_from_content() {
+    add_filter( 'the_title', function( $title )
+    {
+        $post = get_post();
+        if( is_a( $post, '\WP_Post' ) && ! $post->post_title && $post->post_content )
+            $title = wp_trim_words( strip_shortcodes( strip_tags( $post->post_content ) ), 10 );
+        return $title;
+    } );
+}
+add_action( 'load-edit.php', 'sempress_child_title_from_content');
+add_action( 'load-index.php', 'sempress_child_title_from_content');
