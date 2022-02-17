@@ -17,6 +17,26 @@ get_header(); ?>
 		<section id="primary">
 			<main id="content" role="main"<?php sempress_main_class(); ?>>
 
+				<?php
+					if ( get_query_var('paged') ) {
+						$paged = get_query_var('paged');
+					} elseif ( get_query_var('page') ) { // 'page' is used instead of 'paged' on Static Front Page
+						$paged = get_query_var('page');
+					} else {
+						$paged = 1;
+					}
+			  		$args = array(
+						'post_type' => 'post',
+						'posts_per_page'=> get_option('posts_per_page'),
+						'paged'=> $paged,
+						'post_status' => 'publish',
+						'cat' => -1,
+					);
+					$custom_query = new WP_Query($args);
+					$orig_query = $wp_query; // fix for pagination to work
+					$wp_query = $custom_query;
+				?>
+
 			<?php if ( have_posts() ) : ?>
 
 				<?php sempress_content_nav( 'nav-above' ); ?>
@@ -50,6 +70,10 @@ get_header(); ?>
 				</article><!-- #post-0 -->
 
 			<?php endif; ?>
+
+			<?php
+				$wp_query = $orig_query; // fix for pagination to work
+			?>
 
 			</main><!-- #content -->
 		</section><!-- #primary -->
